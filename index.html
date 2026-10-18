@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#121916">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Pflanzenlog">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<title>Pflanzenlog – Gießdokumentation</title>
+<style>
+ :root{color-scheme:dark;--green:#a2d5b5;--green2:#1d3428;--ink:#e7eee9;--muted:#a2b0a7;--line:#35463c;--bg:#101612;--white:#19221c;--warn:#47391b;--red:#ffaaa0;--redbg:#3a211f;--input:#121a15;--shadow:#0005}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+header{background:#18251d;color:var(--ink);border-bottom:1px solid var(--line);padding:22px 16px 18px}header .inner,main{max-width:980px;margin:auto}h1{font-size:1.45rem;margin:0 0 4px}header p{margin:0;color:var(--muted);font-size:.94rem}
+main{padding:16px;display:grid;gap:14px}.card{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:0 2px 8px var(--shadow)}h2{font-size:1.1rem;margin:0 0 12px}h3{font-size:1rem;margin:16px 0 8px}.sub{font-size:.88rem;color:var(--muted);margin-top:-5px}
+label{display:block;font-weight:600;font-size:.92rem;margin:0 0 6px}input,textarea,select,button{font:inherit}input[type=text],input[type=number],input[type=date],input[type=search],textarea,select{width:100%;border:1px solid #46584c;border-radius:10px;padding:11px 12px;background:var(--input);color:var(--ink);min-height:44px}input::placeholder,textarea::placeholder{color:#829087}input:focus,textarea:focus,select:focus,button:focus-visible{outline:3px solid #80b997;outline-offset:1px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.field{min-width:0}.full{grid-column:1/-1}.checkline{display:flex;align-items:flex-start;gap:10px;padding:10px 0;font-weight:500}.checkline input{width:20px;height:20px;accent-color:var(--green);flex-shrink:0;margin-top:2px}
+.plant-add summary,.catalog-list summary{cursor:pointer;color:var(--green);font-weight:700;padding:10px 0}.plant-add{margin-top:10px}.catalog-list{margin-top:10px;border-top:1px solid var(--line);padding-top:4px}.plants{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.plant-choice{border:1px solid var(--line);border-radius:10px;padding:10px;display:flex;gap:8px;align-items:center;font-weight:500;margin:0}.plant-choice input{width:19px;height:19px;accent-color:var(--green)}.additive{display:grid;grid-template-columns:minmax(0,1fr) 115px 42px;gap:8px;align-items:end;margin-bottom:9px}.additive label{font-size:.82rem}.remove{border:1px solid var(--line);background:var(--input);border-radius:9px;height:44px;font-size:1.2rem;color:var(--red)}
+button{border:0;border-radius:10px;padding:11px 14px;font-weight:700;cursor:pointer;min-height:44px}.primary{background:var(--green);color:#102017}.secondary{background:var(--green2);color:var(--green);border:1px solid #41634d}.ghost{background:var(--input);color:var(--ink);border:1px solid var(--line)}.danger{color:var(--red);background:var(--redbg);border:1px solid #77403a}.actions{display:flex;gap:8px;flex-wrap:wrap}.actions>*{flex:1}
+.notice{border-radius:10px;padding:10px 12px;background:var(--green2);color:var(--green);font-size:.9rem;margin:10px 0}.notice.warn{background:var(--warn);color:#f4d993}.muted{color:var(--muted);font-size:.88rem}.hidden{display:none!important}.statrow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}.stat{background:#202b23;border-radius:10px;padding:10px}.stat strong{display:block;font-size:1.2rem}.stat span{font-size:.78rem;color:var(--muted)}
+.history-item{border-top:1px solid var(--line);padding:13px 0}.history-item:first-child{border-top:0}.history-top{display:flex;gap:8px;justify-content:space-between;align-items:flex-start}.history-title{font-weight:700}.pill{display:inline-block;border-radius:999px;background:var(--green2);color:var(--green);font-size:.76rem;padding:3px 8px;white-space:nowrap}.history-meta{font-size:.88rem;color:var(--muted);margin-top:4px}.due-list{display:grid;gap:8px}.due-item{display:flex;width:100%;text-align:left;justify-content:space-between;gap:12px;padding:12px;border:1px solid var(--line);border-radius:10px;background:var(--input);color:var(--ink)}.due-item:last-child{border-bottom:1px solid var(--line)}.due-click{cursor:pointer}.due-click:hover{border-color:var(--green)}.due-left,.due-right{display:flex;flex-direction:column;gap:3px;min-width:0}.due-right{text-align:right;align-items:flex-end;white-space:nowrap}.due-status{font-size:.82rem;font-weight:700}.due-today{color:#f4d993}.due-overdue{color:var(--red)}.due-future{color:var(--green)}.history-summary{margin:0 0 14px}.history-filter-notice{margin:8px 0}.import-table{border:1px solid var(--line);border-radius:10px;overflow:hidden}.import-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(150px,.8fr);gap:10px;padding:10px;border-top:1px solid var(--line);align-items:center}.import-row:first-child{border-top:0}.import-check{font-size:.82rem;margin:0;padding:0}.import-bad{background:var(--redbg);color:var(--red)}.due-card{grid-column:1/-1}.manage-item{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:8px;align-items:center;border-top:1px solid var(--line);padding:10px 0}.manage-item:first-child{border-top:0}.item-name{font-weight:600;overflow-wrap:anywhere}.mini{min-height:36px;padding:6px 10px;font-size:.84rem}small{color:var(--muted)}footer{text-align:center;color:var(--muted);font-size:.8rem;padding:10px 16px 30px}
+@media(min-width:760px){main{grid-template-columns:1.15fr .85fr;align-items:start}.form-card{grid-row:auto}.grid{gap:14px}.plants{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.statrow{grid-template-columns:repeat(2,minmax(0,1fr))}.import-row{grid-template-columns:1fr}.due-item{padding:10px}.due-right{white-space:normal}}
+@media(max-width:420px){main{padding:10px}.card{padding:13px}.grid{grid-template-columns:1fr}.full{grid-column:auto}.additive{grid-template-columns:minmax(0,1fr) 95px 38px}.statrow{gap:5px}.stat{padding:8px}}
+</style>
+</head>
+<body>
+<header><div class="inner"><h1>🌿 Pflanzenlog</h1><p>Lokale Gießdokumentation · Daten bleiben auf diesem Gerät</p></div></header>
+<main>
+<section class="card due-card"><h2>Nächste Gießtermine</h2><p class="sub">Tippe auf eine Pflanze, um ihren letzten Gießeintrag zu öffnen.</p><div id="dueList" class="due-list"></div></section>
+
+<section class="card form-card">
+<h2>Gießvorgang erfassen</h2>
+<p class="sub">Ein Eintrag wird pro ausgewählter Pflanze gespeichert.</p>
+<form id="wateringForm">
+<div class="field">
+<label>Pflanzen auswählen</label>
+<div id="plantChoices" class="plants"></div>
+<details class="plant-add"><summary>+ Pflanze hinzufügen</summary><div class="grid" style="margin-top:8px">
+<div class="field"><label for="newPlant">Name der neuen Pflanze</label><input id="newPlant" type="text" placeholder="z. B. Monstera"></div>
+<div class="field" style="align-self:end"><button class="secondary" type="button" id="addPlantBtn" style="width:100%">Pflanze anlegen</button></div>
+</div></details>
+</div>
+<div class="grid" style="margin-top:14px">
+<div class="field full"><div id="amountFields"><label for="amount">Gießmenge pro Pflanze (Liter)</label><input id="amount" type="number" min="0.01" step="0.01" inputmode="decimal" value="1.00" required></div></div>
+<div class="field"><label for="interval">Intervall bis zum nächsten Gießen (Tage)</label><input id="interval" type="number" min="1" max="365" step="1" inputmode="numeric" required></div>
+<div class="field full"><label for="date">Gießdatum</label><input id="date" type="date" required><label class="checkline"><input id="useNow" type="checkbox" checked><span><strong>Jetzt</strong> – aktuelle Uhrzeit beim Speichern verwenden</span></label><div id="wateringTimeWrap" class="field hidden"><label for="wateringTime">Gießuhrzeit</label><input id="wateringTime" type="time" step="60"><p class="muted">Bei rückwirkenden Gießvorgängen bitte die tatsächliche Uhrzeit auswählen.</p></div></div>
+</div>
+<label class="checkline"><input id="clearWater" type="checkbox"><span><strong>Nur Klarwasser</strong><br><small>Zusätze werden für diesen Vorgang nicht protokolliert. Die Eingabewerte bleiben erhalten.</small></span></label>
+<h3>Zusätze & Dosierungen</h3>
+<div class="field" style="margin-bottom:12px"><label for="doseMode">Dosierung eingeben als</label><select id="doseMode"><option value="perLiter">ml/L – Menge pro Liter</option><option value="total">ml gesamt – Menge für die gesamte Gießlösung</option></select><p class="muted" style="margin:6px 0 0">Bei „ml gesamt“ wird die Menge durch die Summe der Liter aller ausgewählten Pflanzen geteilt und proportional zugeordnet. Die Einheit richtet sich nach dem Eintrag im Zusatz-Katalog (ml oder g).</p></div>
+<div id="additives"></div>
+<div class="actions"><button type="button" class="secondary" id="additiveBtn">+ Zusatz hinzufügen</button></div>
+<div class="field" style="margin-top:12px"><label for="notes">Notiz (optional)</label><textarea id="notes" rows="2" placeholder="z. B. Substrat sehr trocken"></textarea></div>
+<div id="formNotice" class="notice hidden" role="status"></div>
+<div class="actions" style="margin-top:14px"><button type="submit" class="primary">Gießvorgang speichern</button><button type="reset" class="ghost">Formular zurücksetzen</button></div>
+</form>
+</section>
+
+<section class="card" id="historyCard">
+<h2>Gießhistorie</h2>
+<div class="statrow history-summary"><div class="stat"><strong id="plantCount">0</strong><span>Pflanzen</span></div><div class="stat"><strong id="entryCount">0</strong><span>Gieß-Einträge gesamt</span></div><div class="stat"><strong id="dueCount">0</strong><span>Heute fällig</span></div><div class="stat"><strong id="overdueCount">0</strong><span>Überfällig</span></div></div>
+<div class="field"><label for="search">Historie filtern</label><input type="search" id="search" placeholder="Pflanze, Zusatz oder Notiz …"></div>
+<div id="historyFilterNotice" class="notice history-filter-notice hidden"></div><p id="historyCountLabel" class="muted"></p><div id="history"></div>
+</section>
+
+<section class="card"><h2>Pflanzen verwalten</h2><p class="muted">Pflanzen mit verknüpfter Historie können nicht versehentlich gelöscht werden.</p><div id="plantManagement"></div></section>
+<section class="card"><h2>Zusatz-Katalog</h2><p class="muted">Zusätze einmal anlegen und anschließend im Formular aus einer Liste auswählen.</p><details class="catalog-list"><summary>Zusatz-Katalog verwalten / neue Zusätze anlegen</summary><div class="grid" style="margin-top:10px"><div class="field"><label for="productName">Name des Zusatzes</label><input id="productName" type="text" placeholder="z. B. Dünger A"></div><div class="field"><label for="productUnit">Einheit</label><select id="productUnit"><option value="ml">ml</option><option value="g">g</option></select></div><div class="field full"><label for="productManufacturer">Hersteller (optional)</label><input id="productManufacturer" type="text" placeholder="z. B. Herstellername"></div><div class="field full"><label for="productNotes">Zusammensetzung / Notiz (optional)</label><input id="productNotes" type="text" placeholder="z. B. NPK 4-2-6"></div><div class="field full"><button type="button" id="addProductBtn" class="primary">Zusatz speichern</button></div></div><div id="catalogNotice" class="notice hidden" role="status"></div><details class="catalog-list"><summary>Vorhandene Zusätze anzeigen (<span id="productCount">0</span>)</summary><div class="field" style="margin-top:10px"><label for="productSort">Sortierung der Liste und Auswahl</label><select id="productSort"><option value="manufacturerName">Hersteller A–Z, dann Produkt A–Z</option><option value="name">Produktname A–Z</option><option value="manufacturer">Hersteller A–Z</option></select><p class="muted" style="margin:6px 0 0">Diese Sortierung gilt auch für die Zusatzauswahl im Gießformular.</p></div><div id="productManagement"></div></details><div id="productImportPreview" class="hidden"></div></details></section>
+<section class="card">
+<h2>Daten sichern & exportieren</h2>
+<p class="muted">Exportiere regelmäßig eine Sicherung. Der Browser-Speicher ist kein Ersatz für ein Backup.</p>
+<div class="actions"><button class="secondary" id="backupBtn">Sicherung herunterladen</button><button class="ghost" id="restoreBtn">Sicherung importieren</button><input type="file" id="restoreFile" accept=".json,application/json" class="hidden"></div>
+<h3>CSV-Export</h3>
+<div class="actions"><button class="ghost" id="mainCsvBtn">Gießprotokoll CSV</button><button class="ghost" id="addCsvBtn">Zusätze CSV</button><button class="ghost" id="productsCsvBtn">Produktkatalog CSV exportieren</button><button class="secondary" id="productsImportBtn">Produktkatalog CSV importieren</button><input type="file" id="productsImportFile" accept=".csv,text/csv" class="hidden"></div>
+
+<div id="dataNotice" class="notice hidden" role="status"></div>
+</section>
+<section class="card" id="resetCard">
+<h2>Werkseinstellungen</h2>
+<p class="muted">Setzt Pflanzen, Gießhistorie, Zusätze und gespeicherte Formulareinstellungen auf diesem Gerät zurück. Dieser Schritt kann nicht rückgängig gemacht werden.</p>
+<button type="button" class="danger" id="factoryResetBtn">Auf Werkseinstellungen zurücksetzen</button>
+</section>
+</main>
+<footer>Prototyp · Lokale Speicherung auf diesem Gerät · Keine Cloud-Synchronisierung in dieser Version</footer>
+<script src="app.js"></script>
+</body>
+</html>
