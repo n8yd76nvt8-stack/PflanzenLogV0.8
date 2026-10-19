@@ -8,7 +8,8 @@ Pflanzenlog dokumentiert Gießvorgänge, Intervalle, Notizen und Zusätze. Die D
 2. Das Intervall bis zum nächsten Gießen wird in ganzen Tagen angegeben. Bei genau einer ausgewählten Pflanze wird das zuletzt für diese Pflanze gespeicherte Intervall automatisch übernommen, sofern ein früherer Eintrag existiert. Bei Mehrfachauswahl wird das Intervall nicht automatisch überschrieben.
 3. Das Gießdatum ist standardmäßig auf heute gesetzt und **„Jetzt“** ist aktiviert. Dann speichert die App die aktuelle lokale Uhrzeit als Gießzeit.
 4. Bei einem rückwirkenden Datum wird „Jetzt“ automatisch deaktiviert. Wähle dann die tatsächliche Gießuhrzeit aus. Auch wenn du „Jetzt“ für das heutige Datum manuell abwählst, musst du eine Uhrzeit angeben.
-5. Aktiviere **„Nur Klarwasser“**, wenn keine Zusätze verwendet wurden. Andernfalls wähle die Zusätze und trage die Dosierung ein.
+5. Aktiviere **„Klarwasser“**, wenn keine Zusätze verwendet wurden. Andernfalls wähle die Zusätze und trage die Dosierung ein.
+6. Aktiviere **„Zwischenguss“** für eine zusätzliche Wassergabe zwischen regulären Gießterminen. Der Eintrag wird protokolliert, verschiebt aber die nächste Fälligkeit nicht. Die zuletzt bei einem regulären Gießen verwendete Menge bleibt als Standardmenge erhalten.
 6. Ergänze bei Bedarf eine Notiz und speichere den Vorgang.
 
 Bei mehreren Pflanzen werden einzelne Pflanzeneinträge mit einer gemeinsamen Ereignis-ID erstellt.
