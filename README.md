@@ -9,9 +9,10 @@ Pflanzenlog dokumentiert Gießvorgänge, Intervalle, Notizen und Zusätze. Die D
 3. Das Gießdatum ist standardmäßig auf heute gesetzt und **„Jetzt“** ist aktiviert. Dann speichert die App die aktuelle lokale Uhrzeit als Gießzeit.
 4. Bei einem rückwirkenden Datum wird „Jetzt“ automatisch deaktiviert. Wähle dann die tatsächliche Gießuhrzeit aus. Auch wenn du „Jetzt“ für das heutige Datum manuell abwählst, musst du eine Uhrzeit angeben.
 5. Wähle die Zusätze und trage die Dosierung ein, sofern du Zusätze verwendest.
-6. Unter **Optionale Parameter: Klarwasser, Zwischenguss, pH & EC** kannst du bei Bedarf **Klarwasser** oder **Zwischenguss** markieren sowie pH-Wert (0–14) und EC in µS/cm erfassen. Der Bereich ist standardmäßig eingeklappt.
+6. Unter **Optionale Parameter: Klarwasser, Zwischenguss, pH & EC** kannst du bei Bedarf **Klarwasser** oder **Zwischenguss** markieren sowie pH-Wert (0–14) und EC in µS/cm erfassen.
 7. Ein **Zwischenguss** wird protokolliert, verschiebt aber die nächste Fälligkeit nicht. Die zuletzt bei einem regulären Gießen verwendete Menge bleibt als Standardmenge erhalten.
-8. Ergänze bei Bedarf eine Notiz und speichere den Vorgang.
+8. **Klarwasser** wird wie ein normaler Gießvorgang protokolliert und behandelt. Zusätze die aktiv im Fomular stehen werden jedoch nicht protokolliert, bleiben aber im Formular enthalten. 
+9. Ergänze bei Bedarf eine Notiz und speichere den Vorgang.
 
 Bei mehreren Pflanzen werden einzelne Pflanzeneinträge mit einer gemeinsamen Ereignis-ID gespeichert
 
@@ -34,5 +35,5 @@ Die Historie zeigt höchstens sechs passende Einträge, diese können einzeln ge
 Ganz unten kann über **„Auf Werkseinstellungen zurücksetzen“** der lokale Bestand dieser App auf dem Gerät gelöscht werden. Vorher erscheint eine Sicherheitsabfrage. Der Vorgang kann nicht rückgängig gemacht werden; exportiere bei Bedarf vorher eine JSON-Sicherung.
 
 ## Hinweise
-- Regelmäßig Backups erstellen (vor allem JSON); der Browser-Speicher ist kein Ersatz dafür.
+- Regelmäßig Backups erstellen; der Browser-Speicher ist kein Ersatz dafür.
 - Für Offline-Nutzung die veröffentlichte HTTPS-App zunächst einmal online öffnen.
