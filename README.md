@@ -16,23 +16,23 @@ Pflanzenlog dokumentiert Gießvorgänge, Intervalle, Notizen und Zusätze. Die D
 Bei mehreren Pflanzen werden einzelne Pflanzeneinträge mit einer gemeinsamen Ereignis-ID gespeichert
 
 ## Zusätze und Produktkatalog
-Öffne den Bereich **Zusatz-Katalog**, um Produkte anzulegen, zu bearbeiten, zu sortieren, zu importieren oder zu exportieren. Die Sortierung der Produktliste gilt auch für die Zusatzauswahl oben.
+Öffne den Bereich **Zusatz-Katalog**, um Produkte anzulegen, zu bearbeiten, zu sortieren und zu importieren. Die Sortierung der Produktliste gilt auch für die Zusatzauswahl oben.
 
 ## Historie und nächste Gießtermine
 Ganz oben zeigt die App den nächsten Gießtermin pro Pflanze. Ein Klick auf die Pflanze katapultiert dich zum letzten Gießeintrag in der Historie.
 
-Die Historie zeigt höchstens sechs passende Einträge; ältere Einträge bleiben gespeichert und können exportiert werden. Die letzten sechs Einträge können einzeln gelöscht werden.
+Die Historie zeigt höchstens sechs passende Einträge, diese können einzeln gelöscht werden; ältere Einträge bleiben gespeichert und können exportiert werden.
 
 ## Datensicherung und Export
 - **Sicherung herunterladen** erstellt eine JSON-Sicherung der Pflanzen, Einträge, Zusätze und Einstellungen.
 - **Sicherung importieren JSON** ersetzt nach Bestätigung die aktuellen lokalen Daten.
 - **Gießprotokoll CSV** exportiert Gießereignisse
 - **Zusätze CSV** exportiert verwendete Zusätze und Dosierungen
-- **Produktkatalog CSV exportieren/importieren** dient zum Übertragen des Katalogs zwischen Geräten; der Import zeigt zunächst eine Vorschau (Den Zusatz-Katalog Bereich solltest du vorher vollständig aufklappen)
+- **Produktkatalog CSV exportieren/importieren** dient zum Übertragen des Katalogs zwischen Geräten; der Import zeigt zunächst eine Vorschau (Den Bereich „Zusatz-Katalog“ und die vorhandenen Zusätze solltest du vorher vollständig aufklappen)
 
 ## Werkseinstellungen
 Ganz unten kann über **„Auf Werkseinstellungen zurücksetzen“** der lokale Bestand dieser App auf dem Gerät gelöscht werden. Vorher erscheint eine Sicherheitsabfrage. Der Vorgang kann nicht rückgängig gemacht werden; exportiere bei Bedarf vorher eine JSON-Sicherung.
 
 ## Hinweise
-- Regelmäßig Backups erstellen; der Browser-Speicher ist kein Ersatz dafür.
+- Regelmäßig Backups erstellen (vor allem JSON); der Browser-Speicher ist kein Ersatz dafür.
 - Für Offline-Nutzung die veröffentlichte HTTPS-App zunächst einmal online öffnen.
