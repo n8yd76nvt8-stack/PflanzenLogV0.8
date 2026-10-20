@@ -32,13 +32,13 @@ button{border:0;border-radius:10px;padding:11px 14px;font-weight:700;cursor:poin
 <section class="card due-card"><h2>Nächste Gießtermine</h2><p class="sub">Tippe auf eine Pflanze, um ihren letzten Gießeintrag zu öffnen.</p><div id="dueList" class="due-list"></div></section>
 
 <section class="card form-card">
-<details class="section-toggle" open><summary>Gießvorgang erfassen</summary>
+<details class="section-toggle" data-persist-key="watering-section" open><summary>Gießvorgang erfassen</summary>
 <p class="sub">Ein Eintrag wird pro ausgewählter Pflanze gespeichert.</p>
 <form id="wateringForm">
 <div class="field">
 <label>Pflanzen auswählen</label>
 <div id="plantChoices" class="plants"></div>
-<details class="plant-add"><summary>+ Pflanze hinzufügen</summary><div class="grid" style="margin-top:8px">
+<details class="plant-add" data-persist-key="plant-add"><summary>+ Pflanze hinzufügen</summary><div class="grid" style="margin-top:8px">
 <div class="field"><label for="newPlant">Name der neuen Pflanze</label><input id="newPlant" type="text" placeholder="z. B. Monstera"></div>
 <div class="field" style="align-self:end"><button class="secondary" type="button" id="addPlantBtn" style="width:100%">Pflanze anlegen</button></div>
 </div></details>
@@ -48,7 +48,7 @@ button{border:0;border-radius:10px;padding:11px 14px;font-weight:700;cursor:poin
 <div class="field"><label for="interval">Intervall bis zum nächsten Gießen (Tage)</label><input id="interval" type="number" min="1" max="365" step="1" inputmode="numeric" required></div>
 <div class="field full"><label for="date">Gießdatum</label><input id="date" type="date" required><label class="checkline"><input id="useNow" type="checkbox" checked><span><strong>Jetzt</strong> – aktuelle Uhrzeit beim Speichern verwenden</span></label><div id="wateringTimeWrap" class="field hidden"><label for="wateringTime">Gießuhrzeit</label><input id="wateringTime" type="time" step="60"><p class="muted">Bei rückwirkenden Gießvorgängen bitte die tatsächliche Uhrzeit auswählen.</p></div></div>
 </div>
-<details class="catalog-list" style="margin-top:14px"><summary>Optionale Parameter: Klarwasser, Zwischenguss, pH &amp; EC</summary>
+<details class="catalog-list" data-persist-key="optional-parameters" style="margin-top:14px"><summary>Optionale Parameter: Klarwasser, Zwischenguss, pH &amp; EC</summary>
 <div class="checkline" style="display:flex;flex-wrap:wrap;gap:18px;align-items:center"><label class="checkline" style="padding:4px 0;margin:0"><input id="clearWater" type="checkbox"><span><strong>Klarwasser</strong></span></label><label class="checkline" style="padding:4px 0;margin:0"><input id="isZwischenguss" type="checkbox"><span><strong>Zwischenguss</strong></span></label></div>
 <div class="grid" style="margin-top:8px"><div class="field"><label for="ph">pH-Wert (optional)</label><input id="ph" type="number" min="0" max="14" step="0.1" inputmode="decimal" placeholder="z. B. 6,5"></div><div class="field"><label for="ec">EC (µS/cm, optional)</label><input id="ec" type="number" min="0" step="1" inputmode="decimal" placeholder="z. B. 850"></div></div>
 <p class="muted">Diese Angaben sind optional und werden im Gießprotokoll gespeichert. EC wird in µS/cm erfasst.</p></details>
@@ -64,16 +64,16 @@ button{border:0;border-radius:10px;padding:11px 14px;font-weight:700;cursor:poin
 </section>
 
 <section class="card" id="historyCard">
-<details class="section-toggle" open><summary>Gießhistorie</summary>
+<details class="section-toggle" data-persist-key="history-section" open><summary>Gießhistorie</summary>
 <div class="statrow history-summary"><div class="stat"><strong id="plantCount">0</strong><span>Pflanzen</span></div><div class="stat"><strong id="entryCount">0</strong><span>Gieß-Einträge gesamt</span></div><div class="stat"><strong id="dueCount">0</strong><span>Heute fällig</span></div><div class="stat"><strong id="overdueCount">0</strong><span>Überfällig</span></div></div>
 <div class="field"><label for="search">Historie filtern</label><input type="search" id="search" placeholder="Pflanze, Zusatz oder Notiz …"></div>
 <div id="historyFilterNotice" class="notice history-filter-notice hidden"></div><p id="historyCountLabel" class="muted"></p><div id="history"></div>
 </details></section>
 
-<section class="card"><details class="section-toggle"><summary>Pflanzen verwalten</summary><p class="muted">Pflanzen mit verknüpfter Historie können nicht versehentlich gelöscht werden.</p><div id="plantManagement"></div></details></section>
-<section class="card"><details class="section-toggle"><summary>Zusatz-Katalog</summary><p class="muted">Zusätze einmal anlegen und anschließend im Formular aus einer Liste auswählen.</p><div class="catalog-list"><div class="grid" style="margin-top:10px"><div class="field"><label for="productName">Name des Zusatzes</label><input id="productName" type="text" placeholder="z. B. Dünger A"></div><div class="field"><label for="productUnit">Einheit</label><select id="productUnit"><option value="ml">ml</option><option value="g">g</option></select></div><div class="field full"><label for="productManufacturer">Hersteller (optional)</label><input id="productManufacturer" type="text" placeholder="z. B. Herstellername"></div><div class="field full"><label for="productNotes">Zusammensetzung / Notiz (optional)</label><input id="productNotes" type="text" placeholder="z. B. NPK 4-2-6"></div><div class="field full"><button type="button" id="addProductBtn" class="primary">Zusatz speichern</button></div></div><div id="catalogNotice" class="notice hidden" role="status"></div><details class="catalog-list"><summary>Vorhandene Zusätze anzeigen (<span id="productCount">0</span>)</summary><div class="field" style="margin-top:10px"><label for="productSort">Sortierung der Liste und Auswahl</label><select id="productSort"><option value="manufacturerName">Hersteller A–Z, dann Produkt A–Z</option><option value="name">Produktname A–Z</option><option value="manufacturer">Hersteller A–Z</option></select><p class="muted" style="margin:6px 0 0">Diese Sortierung gilt auch für die Zusatzauswahl im Gießformular.</p></div><div id="productManagement"></div></details><div id="productImportPreview" class="hidden"></div></div></details></section>
+<section class="card"><details class="section-toggle" data-persist-key="plant-management"><summary>Pflanzen verwalten</summary><p class="muted">Pflanzen mit verknüpfter Historie können nicht versehentlich gelöscht werden.</p><div id="plantManagement"></div></details></section>
+<section class="card"><details class="section-toggle" data-persist-key="additive-catalog"><summary>Zusatz-Katalog</summary><p class="muted">Zusätze einmal anlegen und anschließend im Formular aus einer Liste auswählen.</p><div class="catalog-list"><div class="grid" style="margin-top:10px"><div class="field"><label for="productName">Name des Zusatzes</label><input id="productName" type="text" placeholder="z. B. Dünger A"></div><div class="field"><label for="productUnit">Einheit</label><select id="productUnit"><option value="ml">ml</option><option value="g">g</option></select></div><div class="field full"><label for="productManufacturer">Hersteller (optional)</label><input id="productManufacturer" type="text" placeholder="z. B. Herstellername"></div><div class="field full"><label for="productNotes">Zusammensetzung / Notiz (optional)</label><input id="productNotes" type="text" placeholder="z. B. NPK 4-2-6"></div><div class="field full"><button type="button" id="addProductBtn" class="primary">Zusatz speichern</button></div></div><div id="catalogNotice" class="notice hidden" role="status"></div><details class="catalog-list" data-persist-key="existing-additives"><summary>Vorhandene Zusätze anzeigen (<span id="productCount">0</span>)</summary><div class="field" style="margin-top:10px"><label for="productSort">Sortierung der Liste und Auswahl</label><select id="productSort"><option value="manufacturerName">Hersteller A–Z, dann Produkt A–Z</option><option value="name">Produktname A–Z</option><option value="manufacturer">Hersteller A–Z</option></select><p class="muted" style="margin:6px 0 0">Diese Sortierung gilt auch für die Zusatzauswahl im Gießformular.</p></div><div id="productManagement"></div></details><div id="productImportPreview" class="hidden"></div></div></details></section>
 <section class="card">
-<details class="section-toggle"><summary>Daten sichern &amp; exportieren</summary>
+<details class="section-toggle" data-persist-key="backup-export"><summary>Daten sichern &amp; exportieren</summary>
 <p class="muted">Exportiere regelmäßig eine Sicherung. Der Browser-Speicher ist kein Ersatz für ein Backup.</p>
 <div class="actions"><button class="secondary" id="backupBtn">Sicherung herunterladen</button><button class="ghost" id="restoreBtn">Sicherung importieren</button><input type="file" id="restoreFile" accept=".json,application/json" class="hidden"></div>
 <h3>CSV-Export</h3>
@@ -82,7 +82,7 @@ button{border:0;border-radius:10px;padding:11px 14px;font-weight:700;cursor:poin
 <div id="dataNotice" class="notice hidden" role="status"></div>
 </details></section>
 <section class="card" id="resetCard">
-<details class="section-toggle"><summary>Werkseinstellungen</summary>
+<details class="section-toggle" data-persist-key="factory-reset"><summary>Werkseinstellungen</summary>
 <p class="muted">Setzt Pflanzen, Gießhistorie, Zusätze und gespeicherte Formulareinstellungen auf diesem Gerät zurück. Dieser Schritt kann nicht rückgängig gemacht werden.</p>
 <button type="button" class="danger" id="factoryResetBtn">Auf Werkseinstellungen zurücksetzen</button>
 </details></section>

@@ -26,10 +26,10 @@ Die Gießhistorie wird nach Gießzeit chronologisch sortiert. Die CSV-Exporte en
 Die Zusatzauswahl im oberen Gießformular bleibt wie gewohnt sichtbar. Der separate **Zusatz-Katalog** weiter unten ist standardmäßig eingeklappt. Öffne den Bereich **Zusatz-Katalog**, um Produkte anzulegen, zu bearbeiten, zu sortieren, zu importieren oder zu exportieren. Die Sortierung der Produktliste gilt auch für die Zusatzauswahl im Gießformular.
 
 ## Bereiche ein- und ausklappen
-Die Bereiche **Gießvorgang erfassen** und **Gießhistorie** sind standardmäßig geöffnet. **Pflanzen verwalten**, **Zusatz-Katalog**, **Daten sichern & exportieren** und **Werkseinstellungen** sind standardmäßig eingeklappt. Im Gießformular sind die optionalen Parameter für Klarwasser, Zwischenguss, pH und EC ebenfalls eingeklappt.
+Die Bereiche **Gießvorgang erfassen** und **Gießhistorie** sind beim ersten Start standardmäßig geöffnet. **Pflanzen verwalten**, **Zusatz-Katalog**, **Daten sichern & exportieren** und **Werkseinstellungen** sind beim ersten Start eingeklappt. Im Gießformular sind die optionalen Parameter für Klarwasser, Zwischenguss, pH und EC ebenfalls eingeklappt. Die Offen-/Geschlossen-Zustände aller einklappbaren Bereiche werden lokal im Browser gespeichert und beim nächsten Öffnen wiederhergestellt. Das gilt auch für „Pflanze hinzufügen“ und „Vorhandene Zusätze anzeigen“. Die Zustände gelten pro Browser und Gerät und werden nicht mit anderen Geräten synchronisiert. Beim Zurücksetzen auf Werkseinstellungen werden auch diese Ansichts-Einstellungen auf die Standardzustände zurückgesetzt.
 
 ## Historie und nächste Gießtermine
-Oben zeigt die App den nächsten Gießtermin pro Pflanze. Die Historie zeigt standardmäßig höchstens sechs passende Einträge; ältere Einträge bleiben gespeichert und werden weiterhin exportiert. Einträge können einzeln gelöscht werden.
+Oben zeigt die App den nächsten Gießtermin pro Pflanze. Die Historie zeigt standardmäßig höchstens sechs passende Einträge. Zuerst wird nach der ausgewählten Pflanze bzw. dem Suchbegriff gefiltert und danach auf sechs Einträge begrenzt; ältere Einträge bleiben gespeichert und werden weiterhin exportiert. Einträge können einzeln gelöscht werden.
 
 ## Datensicherung und Export
 - **Sicherung herunterladen** erstellt eine JSON-Sicherung der Pflanzen, Einträge, Zusätze und Einstellungen.
