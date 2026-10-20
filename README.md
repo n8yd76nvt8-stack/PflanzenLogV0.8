@@ -36,4 +36,4 @@ Ganz unten kann über **„Auf Werkseinstellungen zurücksetzen“** der lokale 
 
 ## Hinweise
 - Regelmäßig Backups erstellen; der Browser-Speicher ist kein Ersatz dafür.
-- Für Offline-Nutzung die veröffentlichte HTTPS-App zunächst einmal online öffnen.
+- Für Offline-Nutzung die veröffentlichte HTTPS-App zunächst einmal online öffnen. Dann teilen -> zum Home-Bildschirm hinzufügen
