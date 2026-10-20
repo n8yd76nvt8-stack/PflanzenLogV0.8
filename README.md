@@ -25,10 +25,10 @@ Die Historie zeigt höchstens sechs passende Einträge, diese können einzeln ge
 
 ## Datensicherung und Export
 - **Sicherung herunterladen** erstellt eine JSON-Sicherung der Pflanzen, Einträge, Zusätze und Einstellungen.
-- **Sicherung importieren JSON** ersetzt nach Bestätigung die aktuellen lokalen Daten.
-- **Gießprotokoll CSV** exportiert Gießereignisse
-- **Zusätze CSV** exportiert verwendete Zusätze und Dosierungen
-- **Produktkatalog CSV exportieren/importieren** dient zum Übertragen des Katalogs zwischen Geräten; der Import zeigt zunächst eine Vorschau (Den Bereich „Zusatz-Katalog“ und die vorhandenen Zusätze solltest du vorher vollständig aufklappen)
+- **Sicherung importieren (JSON)** ersetzt nach Bestätigung die aktuellen lokalen Daten.
+- **Gießprotokoll (CSV)** exportiert Gießereignisse
+- **Zusätze (CSV)** exportiert verwendete Zusätze und Dosierungen
+- **Produktkatalog (CSV) exportieren/importieren** dient zum Übertragen des Katalogs zwischen Geräten; der Import zeigt zunächst eine Vorschau (Den Bereich „Zusatz-Katalog“ und die vorhandenen Zusätze solltest du vorher vollständig aufklappen)
 
 ## Werkseinstellungen
 Ganz unten kann über **„Auf Werkseinstellungen zurücksetzen“** der lokale Bestand dieser App auf dem Gerät gelöscht werden. Vorher erscheint eine Sicherheitsabfrage. Der Vorgang kann nicht rückgängig gemacht werden; exportiere bei Bedarf vorher eine JSON-Sicherung.
