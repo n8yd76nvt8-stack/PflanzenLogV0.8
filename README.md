@@ -11,7 +11,7 @@ Pflanzenlog dokumentiert Gießvorgänge, Intervalle, Notizen und Zusätze. Die D
 5. Wähle die Zusätze und trage die Dosierung ein, sofern du Zusätze verwendest.
 6. Unter **Optionale Parameter: Klarwasser, Zwischenguss, pH & EC** kannst du bei Bedarf **Klarwasser** oder **Zwischenguss** markieren sowie pH-Wert (0–14) und EC in µS/cm erfassen.
 7. Ein **Zwischenguss** wird protokolliert, verschiebt aber die nächste Fälligkeit nicht. Die zuletzt bei einem regulären Gießen verwendete Menge bleibt als Standardmenge erhalten.
-8. **Klarwasser** wird wie ein normaler Gießvorgang protokolliert und behandelt. Zusätze die aktiv im Fomular stehen werden jedoch nicht protokolliert, bleiben aber erhalten. 
+8. **Klarwasser** wird wie ein regulärer Gießvorgang protokolliert und behandelt. Zusätze die aktiv im Fomular stehen werden jedoch nicht protokolliert, bleiben aber erhalten. 
 9. Ergänze bei Bedarf eine Notiz und speichere den Vorgang.
 
 Bei mehreren Pflanzen werden einzelne Pflanzeneinträge mit einer gemeinsamen Ereignis-ID gespeichert
