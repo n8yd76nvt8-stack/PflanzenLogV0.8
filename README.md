@@ -21,11 +21,11 @@ Bei mehreren Pflanzen werden einzelne Pflanzeneinträge mit einer gemeinsamen Er
 ## Historie und nächste Gießtermine
 Ganz oben zeigt die App den nächsten Gießtermin pro Pflanze. Ein Klick auf die Pflanze katapultiert dich zum letzten Gießeintrag in der Historie.
 
-Die Historie zeigt höchstens sechs passende Einträge; ältere Einträge bleiben gespeichert und können exportiert werden. Die letzten Einträge können einzeln gelöscht werden.
+Die Historie zeigt höchstens sechs passende Einträge; ältere Einträge bleiben gespeichert und können exportiert werden. Die letzten sechs Einträge können einzeln gelöscht werden.
 
 ## Datensicherung und Export
 - **Sicherung herunterladen** erstellt eine JSON-Sicherung der Pflanzen, Einträge, Zusätze und Einstellungen.
-- **Sicherung importieren (JSON)** ersetzt nach Bestätigung die aktuellen lokalen Daten.
+- **Sicherung importieren JSON** ersetzt nach Bestätigung die aktuellen lokalen Daten.
 - **Gießprotokoll CSV** exportiert Gießereignisse
 - **Zusätze CSV** exportiert verwendete Zusätze und Dosierungen
 - **Produktkatalog CSV exportieren/importieren** dient zum Übertragen des Katalogs zwischen Geräten; der Import zeigt zunächst eine Vorschau (Den Zusatz-Katalog Bereich solltest du vorher vollständig aufklappen)
